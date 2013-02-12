@@ -28,6 +28,11 @@ my $reverse = reverse $forward;
 print $forward, "\n";
 print $reverse, "\n";
 
+$forward =~ s/[[:punct:]]//g;
+$reverse =~ s/[[:punct:]]//g;
+
+$reverse =~ s/\s//g;
+$forward =~ s/\s//g;
 
 # String Literal Evaluation
 if ($forward eq $reverse) { 
