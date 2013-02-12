@@ -17,6 +17,11 @@ my $reverse = reverse $forward;
 print $forward, "\n";
 print $reverse, "\n";
 
+$forward =~ s/[[:punct:]]//g;
+$reverse =~ s/[[:punct:]]//g;
+
+$reverse =~ s/\s//g;
+$forward =~ s/\s//g;
 
 if ($forward eq $reverse) { 
 	print "It's a palindrome!\n";
