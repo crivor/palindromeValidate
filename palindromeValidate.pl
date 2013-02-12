@@ -9,15 +9,27 @@
 
 use strict;
 use warnings;
-use File::Slurp;
 
-my $forward = read_file( 'shortPalindrome.txt' );
+my $forward;
+
+# Opens file. Reads file in line by line. chomps line endings. joins lines into a single string. closes file.
+open(my $FH, '<', 'palindrome.txt') or die "Error: $!";
+	while( <$FH> ) {
+	my $line = $_;
+	chomp($line);
+	$forward .= $line;
+	}
+close $FH or die "Error: $!";
+
+# reverse operator is applied to forward to get the reverse string
 my $reverse = reverse $forward;
 
+# Outputs both forward and reverse so the human can see both strings
 print $forward, "\n";
 print $reverse, "\n";
 
 
+# String Literal Evaluation
 if ($forward eq $reverse) { 
 	print "It's a palindrome!\n";
 } else {
