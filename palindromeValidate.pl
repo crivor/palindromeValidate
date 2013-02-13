@@ -21,6 +21,12 @@ open(my $FH, '<', 'palindrome.txt') or die "Error: $!";
 	}
 close $FH or die "Error: $!";
 
+# remove non-alpha characters
+$forward =~ s/(\W+)//g;
+
+# transform text to lowercase
+$forward = lc($forward);
+
 # reverse operator is applied to forward to get the reverse string
 my $reverse = reverse $forward;
 
