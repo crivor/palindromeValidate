@@ -1,11 +1,4 @@
 #!/usr/bin/env perl
-#
-# Basic script for reading in a file
-# storing a file as a string
-# reversing the string
-# and checking to see if the reverse
-# equals the original
-#
 
 use strict;
 use warnings;
@@ -20,6 +13,7 @@ open(my $FH, '<', 'palindrome.txt') or die "Error: $!";
 	$forward .= $line;
 	}
 close $FH or die "Error: $!";
+
 
 # remove non-alpha characters
 $forward =~ s/(\W+)//g;
